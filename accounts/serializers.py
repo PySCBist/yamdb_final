@@ -15,6 +15,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             'role'
         )
 
+
 class ProfileMailSerializer(serializers.Serializer):
     username = serializers.CharField(max_length=100)
     email = serializers.EmailField()
