@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://github.com/PySCBist/yamdb_final/workflows/yamdb_workflow/badge.svg)
+![Workflow Status](https://github.com/PySCBist/yamdb_final/workflows/Yamdb%20workflow/badge.svg)
 
 # Описание проекта
 
