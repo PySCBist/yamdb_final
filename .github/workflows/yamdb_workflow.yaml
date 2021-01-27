@@ -58,10 +58,9 @@ jobs:
         script: |
           sudo docker pull pyscbist/yamdb-final
           sudo docker stop $(sudo docker ps -a -q)
-    - name: Run compose and test
-      run: |
-        docker-compose up -d
-        docker run --network container:ycuser_app_1 pyscbist/yamdb-final -s --retry 10 --retry-connrefused http://localhost:8888/
+        run: |
+          docker-compose up -d
+          docker run --network container:ycuser_app_1 pyscbist/yamdb-final -s --retry 10 --retry-connrefused http://localhost:8888/
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
