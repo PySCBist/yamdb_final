@@ -110,4 +110,7 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 SENDER_EMAIL = 'bot@yamdb.ru'

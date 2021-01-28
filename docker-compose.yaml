@@ -1,12 +1,13 @@
-version: '3.8'
+version: '3.3'
 
 volumes:
   postgres_data:
   staticfiles:
+  mediafiles:
 
 services:
   db:
-    image: postgres:latest
+    image: postgres:13.1
     env_file:
       .env
     volumes:
@@ -16,6 +17,7 @@ services:
     image: pyscbist/yamdb-final:latest
     volumes:
       - staticfiles:/code/static
+      - mediafiles:/code/media
     depends_on:
       - db
 

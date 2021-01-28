@@ -9,7 +9,6 @@ RUN apt-get update \
 WORKDIR /code
 COPY . /code
 RUN pip install -r requirements.txt
-RUN python manage.py collectstatic --no-input
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN sed -i 's/\r//' /entrypoint.sh
