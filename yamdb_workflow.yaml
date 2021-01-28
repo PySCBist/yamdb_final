@@ -19,7 +19,7 @@ jobs:
         pip install flake8 pytest
         pip install -r requirements.txt
     - name: Lint with flake8
-      run: flake8 .
+      run: flake8 . --exclude tests,api_yamdb/settings.py,migrations
 
     - name: Test with pytest
       run: pytest
@@ -55,11 +55,11 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker stop $(sudo docker ps -a -q)
-          sudo docker image rm pyscbist/yamdb-final
-          sudo docker container prune -f
+          sudo docker-compose stop
+          sudo docker-compose rm -f
           sudo docker pull pyscbist/yamdb-final:latest
           sudo docker-compose up -d
+          sudo docker system prune -a -f
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
